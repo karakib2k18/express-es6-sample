@@ -7,8 +7,9 @@ phases:
       - npm install
   build:
     commands:
-      - echo Building application...
-      - npm run build || echo "No build step needed"
+      - echo Build started...
+      - npm run build || echo "No build script found, skipping"
+
 artifacts:
   files:
     - '**/*'
