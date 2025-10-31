@@ -1,24 +1,37 @@
 version: 0.2
 phases:
   install:
-    runtime-versions:
-      nodejs: 20
     commands:
       - echo "Installing dependencies..."
-      - npm ci || npm install
-  pre_build:
-    commands:
-      - node -v
-      - npm -v
+      - npm install
   build:
     commands:
-      - echo "Transpiling to dist-server for production..."
-      - npm run build
-  post_build:
-    commands:
-      - echo "Optional: run a quick smoke test here as well"
-      - npm test || echo "Tests skipped in build stage"
+      - echo "Building application..."
 artifacts:
   files:
     - '**/*'
-  discard-paths: no
+    
+# version: 0.2
+# phases:
+#   install:
+#     runtime-versions:
+#       nodejs: 20
+#     commands:
+#       - echo "Installing dependencies..."
+#       - npm ci || npm install
+#   pre_build:
+#     commands:
+#       - node -v
+#       - npm -v
+#   build:
+#     commands:
+#       - echo "Transpiling to dist-server for production..."
+#       - npm run build
+#   post_build:
+#     commands:
+#       - echo "Optional: run a quick smoke test here as well"
+#       - npm test || echo "Tests skipped in build stage"
+# artifacts:
+#   files:
+#     - '**/*'
+#   discard-paths: no
