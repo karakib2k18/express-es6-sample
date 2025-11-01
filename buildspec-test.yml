@@ -1,13 +1,16 @@
 version: 0.2
+
 phases:
   install:
     runtime-versions:
-      nodejs: 20
+      nodejs: 18
     commands:
-      - npm ci || npm install
+      - npm ci
   build:
     commands:
-      - npm test
+      - npm test --if-present
+
 artifacts:
   files:
     - '**/*'
+  discard-paths: no
