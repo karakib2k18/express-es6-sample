@@ -1,15 +1,14 @@
 version: 0.2
-
 phases:
   install:
     commands:
-      - echo Installing dependencies...
-      - npm install
+      - node -v
+      - npm -v
+      - npm ci
   build:
     commands:
-      - echo Build started...
-      - npm run build || echo "No build script found, skipping"
-
+      - npm run build || echo "no build step"
 artifacts:
   files:
     - '**/*'
+  discard-paths: no
